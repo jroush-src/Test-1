@@ -174,6 +174,30 @@ namespace LightSwitchApplication
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void City_Changed();
 
+        /// <summary>
+        /// No Modeled Description Available
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "10.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public string State
+        {
+            get
+            {
+                return global::LightSwitchApplication.Table1Item.DetailsClass.GetValue(this, global::LightSwitchApplication.Table1Item.DetailsClass.PropertySetProperties.State);
+            }
+            set
+            {
+                global::LightSwitchApplication.Table1Item.DetailsClass.SetValue(this, global::LightSwitchApplication.Table1Item.DetailsClass.PropertySetProperties.State, value);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void State_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void State_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void State_Changed();
+
         #endregion
     
         #region Details Class
@@ -288,6 +312,14 @@ namespace LightSwitchApplication
                     }
                 }
                 
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Table1Item, global::LightSwitchApplication.Table1Item.DetailsClass, string> State
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.Table1Item.DetailsClass.PropertySetProperties.State) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Table1Item, global::LightSwitchApplication.Table1Item.DetailsClass, string>;
+                    }
+                }
+                
             }
     
             #pragma warning disable 109
@@ -298,6 +330,7 @@ namespace LightSwitchApplication
                 new string Name { get; set; }
                 new string email { get; set; }
                 new string City { get; set; }
+                new string State { get; set; }
             }
             #pragma warning restore 109
     
@@ -455,6 +488,43 @@ namespace LightSwitchApplication
                     e.City_Changed();
                 }
     
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Table1Item, global::LightSwitchApplication.Table1Item.DetailsClass, string>.Entry
+                    State = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Table1Item, global::LightSwitchApplication.Table1Item.DetailsClass, string>.Entry(
+                        "State",
+                        global::LightSwitchApplication.Table1Item.DetailsClass.PropertySetProperties._State_Stub,
+                        global::LightSwitchApplication.Table1Item.DetailsClass.PropertySetProperties._State_ComputeIsReadOnly,
+                        global::LightSwitchApplication.Table1Item.DetailsClass.PropertySetProperties._State_Validate,
+                        global::LightSwitchApplication.Table1Item.DetailsClass.PropertySetProperties._State_GetImplementationValue,
+                        global::LightSwitchApplication.Table1Item.DetailsClass.PropertySetProperties._State_SetImplementationValue,
+                        global::LightSwitchApplication.Table1Item.DetailsClass.PropertySetProperties._State_OnValueChanged);
+                private static void _State_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Table1Item.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Table1Item, global::LightSwitchApplication.Table1Item.DetailsClass, string>.Data> c, global::LightSwitchApplication.Table1Item.DetailsClass d, object sf)
+                {
+                    c(d, ref d._State, sf);
+                }
+                private static bool _State_ComputeIsReadOnly(global::LightSwitchApplication.Table1Item e)
+                {
+                    bool result = false;
+                    e.State_IsReadOnly(ref result);
+                    return result;
+                }
+                private static void _State_Validate(global::LightSwitchApplication.Table1Item e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.State_Validate(r);
+                }
+                private static string _State_GetImplementationValue(global::LightSwitchApplication.Table1Item.DetailsClass d)
+                {
+                    return d.ImplementationEntity.State;
+                }
+                private static void _State_SetImplementationValue(global::LightSwitchApplication.Table1Item.DetailsClass d, string v)
+                {
+                    d.ImplementationEntity.State = v;
+                }
+                private static void _State_OnValueChanged(global::LightSwitchApplication.Table1Item e)
+                {
+                    e.State_Changed();
+                }
+    
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -468,6 +538,9 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Table1Item, global::LightSwitchApplication.Table1Item.DetailsClass, string>.Data _City;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Table1Item, global::LightSwitchApplication.Table1Item.DetailsClass, string>.Data _State;
             
         }
     

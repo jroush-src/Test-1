@@ -193,6 +193,13 @@
           <MaxLength Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <EntityProperty Name="State"
+                      PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
 
@@ -588,6 +595,17 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression Member="Table1Item/Properties[City]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem DataType=":String"
+                           Kind="Value"
+                           Name="State">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression Member="Table1Item/Properties[State]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>

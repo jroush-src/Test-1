@@ -11,5 +11,6 @@
     <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="City" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="State" Type="nvarchar" Nullable="false" MaxLength="255" />
   </EntityType>
 </Schema>
