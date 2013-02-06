@@ -8,7 +8,6 @@
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="email" ColumnName="email" />
           <ScalarProperty Name="City" ColumnName="City" />
-          <ScalarProperty Name="State" ColumnName="State" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

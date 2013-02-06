@@ -115,15 +115,13 @@ namespace ApplicationData.Implementation
         /// <param name="name">Initial value of the Name property.</param>
         /// <param name="email">Initial value of the email property.</param>
         /// <param name="city">Initial value of the City property.</param>
-        /// <param name="state">Initial value of the State property.</param>
-        public static Table1Item CreateTable1Item(global::System.Int32 id, global::System.String name, global::System.String email, global::System.String city, global::System.String state)
+        public static Table1Item CreateTable1Item(global::System.Int32 id, global::System.String name, global::System.String email, global::System.String city)
         {
             Table1Item table1Item = new Table1Item();
             table1Item.Id = id;
             table1Item.Name = name;
             table1Item.email = email;
             table1Item.City = city;
-            table1Item.State = state;
             return table1Item;
         }
 
@@ -229,30 +227,6 @@ namespace ApplicationData.Implementation
         private global::System.String _City;
         partial void OnCityChanging(global::System.String value);
         partial void OnCityChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String State
-        {
-            get
-            {
-                return _State;
-            }
-            set
-            {
-                OnStateChanging(value);
-                ReportPropertyChanging("State");
-                _State = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("State");
-                OnStateChanged();
-            }
-        }
-        private global::System.String _State;
-        partial void OnStateChanging(global::System.String value);
-        partial void OnStateChanged();
 
         #endregion
 

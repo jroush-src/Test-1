@@ -8,7 +8,6 @@
     <Property Name="Name" Type="String" Nullable="false" MaxLength="255" ConcurrencyMode="Fixed" />
     <Property Name="email" Type="String" Nullable="false" MaxLength="255" ConcurrencyMode="Fixed" />
     <Property Name="City" Type="String" Nullable="false" MaxLength="255" ConcurrencyMode="Fixed" />
-    <Property Name="State" Type="String" Nullable="false" MaxLength="255" ConcurrencyMode="Fixed" />
   </EntityType>
   <EntityContainer Name="ApplicationDataObjectContext">
     <EntitySet Name="Table1Items" EntityType="ApplicationData.Table1Item" />
