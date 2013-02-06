@@ -112,6 +112,27 @@ namespace LightSwitchApplication.Implementation
         }
         private string _City;
         
+        [global::System.Runtime.Serialization.DataMember()]
+        [global::System.ComponentModel.DataAnnotations.RoundtripOriginal()]
+        public string State
+        {
+            get
+            {
+                return this._State;
+            }
+            set
+            {
+                if (this._State != value)
+                {
+                    this.RaiseDataMemberChanging("State");
+                    this.ValidateProperty("State", value);
+                    this._State = value;
+                    this.RaiseDataMemberChanged("State");
+                }
+            }
+        }
+        private string _State;
+        
         #region IEntityImplementation Members
         private global::Microsoft.LightSwitch.Internal.IEntityImplementationHost __host;
         
