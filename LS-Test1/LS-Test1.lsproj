@@ -10,8 +10,8 @@
     <RootNamespace>LS_Test1</RootNamespace>
     <AssemblyName>Microsoft.LightSwitch.Server.Host</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <LightSwitchVersion>v1.0</LightSwitchVersion>
-    <LightSwitchProjectVersion>v1.0</LightSwitchProjectVersion>
+    <LightSwitchVersion>v2.0</LightSwitchVersion>
+    <LightSwitchProjectVersion>v2.1</LightSwitchProjectVersion>
     <Name>LS_Test1</Name>
     <LightSwitchProjectType>LightSwitch</LightSwitchProjectType>
     <GenerateManifests>true</GenerateManifests>
@@ -19,13 +19,14 @@
     <BaseIntermediateOutputPath>bin</BaseIntermediateOutputPath>
     <ApplicationClientType>Desktop</ApplicationClientType>
     <ApplicationServerType>LocalHost</ApplicationServerType>
-    <RequireSecureConnection>true</RequireSecureConnection>
+    <RequireSecureConnection>false</RequireSecureConnection>
     <AuthenticationType>None</AuthenticationType>
     <ApplicationName>LS_Test1</ApplicationName>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <ServiceDefinitionFile>ServiceDefinition.csdef</ServiceDefinitionFile>
     <ServiceConfigurationFile>ServiceConfiguration.cscfg</ServiceConfigurationFile>
-    <SqlExpressInstanceName>SQLEXPRESS</SqlExpressInstanceName>
+    <SqlExpressInstanceName>(LocalDB)\v11.0</SqlExpressInstanceName>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -68,11 +69,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-    </None>
-    <LightSwitchModel Include="Data\ApplicationDefinition.lsml">
-      <ProjectCritical>true</ProjectCritical>
-    </LightSwitchModel>
     <None Include="Silverlight.js">
       <Visible>false</Visible>
       <ProjectCritical>true</ProjectCritical>
@@ -86,23 +82,12 @@
     <ServiceDefinition Include="ServiceDefinition.csdef" />
     <ServiceConfiguration Include="ServiceConfiguration.cscfg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data\">
-      <ProjectCritical>true</ProjectCritical>
-    </Folder>
-  </ItemGroup>
   <ItemGroup Condition="'$(BuildingInsideVisualStudio)' != 'true'">
     <ProjectReference Include="Client\Client.csproj">
       <Name>Client</Name>
     </ProjectReference>
-    <ProjectReference Include="ClientGenerated\ClientGenerated.csproj">
-      <Name>ClientGenerated</Name>
-    </ProjectReference>
     <ProjectReference Include="Server\Server.csproj">
       <Name>Server</Name>
-    </ProjectReference>
-    <ProjectReference Include="ServerGenerated\ServerGenerated.csproj">
-      <Name>ServerGenerated</Name>
     </ProjectReference>
     <ProjectReference Include="Common\Common.csproj">
       <Name>Common</Name>
@@ -121,27 +106,21 @@
       <Name>Client</Name>
       <InstanceGuid>{d11718a0-c7e2-4109-8965-3356432d86e6}</InstanceGuid>
     </SubProject>
-    <SubProject Include="ClientGenerated\ClientGenerated.csproj">
-      <TypeGuid>{01074E5A-9000-460e-AB81-3A9263818D40}</TypeGuid>
-      <BaseTypeGuid>{FAE04EC0-301F-11d3-BF4B-00C04F79EFBC}</BaseTypeGuid>
-      <Name>ClientGenerated</Name>
-      <InstanceGuid>{c4ba8d6e-cc4d-4d37-9a9e-b2b0b3c21813}</InstanceGuid>
-    </SubProject>
     <SubProject Include="Server\Server.csproj">
       <TypeGuid>{01074E5A-9000-460e-AB81-3A9263818D40}</TypeGuid>
       <BaseTypeGuid>{FAE04EC0-301F-11d3-BF4B-00C04F79EFBC}</BaseTypeGuid>
       <Name>Server</Name>
       <InstanceGuid>{0d502e9d-d7b9-42e3-8c55-1a1300b123a6}</InstanceGuid>
     </SubProject>
-    <SubProject Include="ServerGenerated\ServerGenerated.csproj">
-      <TypeGuid>{01074E5A-9000-460e-AB81-3A9263818D40}</TypeGuid>
-      <BaseTypeGuid>{FAE04EC0-301F-11d3-BF4B-00C04F79EFBC}</BaseTypeGuid>
-      <Name>ServerGenerated</Name>
-      <InstanceGuid>{8642d34d-2966-46f5-a735-f936d6ca3b02}</InstanceGuid>
-    </SubProject>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
+    <_BuildFile Include="$(LightSwitchPath)\LightSwitch\Server\Microsoft.LightSwitch.SecurityData.svc">
+      <SubFolder>
+      </SubFolder>
+      <PublishType>
+      </PublishType>
+    </_BuildFile>
     <_BuildFile Include="vslshost.exe">
       <SubFolder>
       </SubFolder>
@@ -157,18 +136,17 @@
       </SubFolder>
       <PublishType>Exclude</PublishType>
     </_BuildFile>
-    <_BuildFile Include="$(LightSwitchPath)\LightSwitch\1.0\Server\ClientAccessPolicy.xml">
-      <SubFolder>
-      </SubFolder>
-      <PublishType>
-      </PublishType>
-    </_BuildFile>
-    <_BuildFile Include="$(LightSwitchPath)\LightSwitch\1.0\Server\Microsoft.LightSwitch.Design.svc">
+    <_BuildFile Include="$(LightSwitchPath)\LightSwitch\Server\ClientAccessPolicy.xml">
       <SubFolder>
       </SubFolder>
       <PublishType>Exclude</PublishType>
     </_BuildFile>
-    <_BuildFile Include="ServerGenerated\web.config">
+    <_BuildFile Include="$(LightSwitchPath)\LightSwitch\Server\Microsoft.LightSwitch.Design.svc">
+      <SubFolder>
+      </SubFolder>
+      <PublishType>Exclude</PublishType>
+    </_BuildFile>
+    <_BuildFile Include="Server\web.config">
       <SubFolder>
       </SubFolder>
       <PublishType>
@@ -189,9 +167,8 @@
   </ItemGroup>
   <ItemGroup>
     <LightSwitchExtension Include="Microsoft.LightSwitch.Extensions">
-      <Client>MICROSOFT.LIGHTSWITCH.EXTENSIONS.DESIGN.CLIENT</Client>
-      <ClientGenerated>MICROSOFT.LIGHTSWITCH.EXTENSIONS.DESIGN.CLIENT;MICROSOFT.LIGHTSWITCH.EXTENSIONS.CLIENT</ClientGenerated>
-      <ServerGenerated>MICROSOFT.LIGHTSWITCH.EXTENSIONS.SERVER</ServerGenerated>
+      <Client>MICROSOFT.LIGHTSWITCH.EXTENSIONS.CLIENT;MICROSOFT.LIGHTSWITCH.EXTENSIONS.DESIGN.CLIENT</Client>
+      <Server>MICROSOFT.LIGHTSWITCH.EXTENSIONS.SERVER</Server>
     </LightSwitchExtension>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\LightSwitch\$(LightSwitchVersion)\Microsoft.LightSwitch.targets" />
