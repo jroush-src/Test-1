@@ -223,6 +223,30 @@ namespace LightSwitchApplication
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void RowVersion_Changed();
 
+        /// <summary>
+        /// No Modeled Description Available
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public string ZIP
+        {
+            get
+            {
+                return global::LightSwitchApplication.Table1Item.DetailsClass.GetValue(this, global::LightSwitchApplication.Table1Item.DetailsClass.PropertySetProperties.ZIP);
+            }
+            set
+            {
+                global::LightSwitchApplication.Table1Item.DetailsClass.SetValue(this, global::LightSwitchApplication.Table1Item.DetailsClass.PropertySetProperties.ZIP, value);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ZIP_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ZIP_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ZIP_Changed();
+
         #endregion
     
         #region Details Class
@@ -353,6 +377,14 @@ namespace LightSwitchApplication
                     }
                 }
                 
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Table1Item, global::LightSwitchApplication.Table1Item.DetailsClass, string> ZIP
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.Table1Item.DetailsClass.PropertySetProperties.ZIP) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Table1Item, global::LightSwitchApplication.Table1Item.DetailsClass, string>;
+                    }
+                }
+                
             }
     
             #pragma warning disable 109
@@ -365,6 +397,7 @@ namespace LightSwitchApplication
                 new string City { get; set; }
                 new string State { get; set; }
                 new byte[] RowVersion { get; set; }
+                new string ZIP { get; set; }
             }
             #pragma warning restore 109
     
@@ -596,6 +629,43 @@ namespace LightSwitchApplication
                     e.RowVersion_Changed();
                 }
     
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Table1Item, global::LightSwitchApplication.Table1Item.DetailsClass, string>.Entry
+                    ZIP = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Table1Item, global::LightSwitchApplication.Table1Item.DetailsClass, string>.Entry(
+                        "ZIP",
+                        global::LightSwitchApplication.Table1Item.DetailsClass.PropertySetProperties._ZIP_Stub,
+                        global::LightSwitchApplication.Table1Item.DetailsClass.PropertySetProperties._ZIP_ComputeIsReadOnly,
+                        global::LightSwitchApplication.Table1Item.DetailsClass.PropertySetProperties._ZIP_Validate,
+                        global::LightSwitchApplication.Table1Item.DetailsClass.PropertySetProperties._ZIP_GetImplementationValue,
+                        global::LightSwitchApplication.Table1Item.DetailsClass.PropertySetProperties._ZIP_SetImplementationValue,
+                        global::LightSwitchApplication.Table1Item.DetailsClass.PropertySetProperties._ZIP_OnValueChanged);
+                private static void _ZIP_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Table1Item.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Table1Item, global::LightSwitchApplication.Table1Item.DetailsClass, string>.Data> c, global::LightSwitchApplication.Table1Item.DetailsClass d, object sf)
+                {
+                    c(d, ref d._ZIP, sf);
+                }
+                private static bool _ZIP_ComputeIsReadOnly(global::LightSwitchApplication.Table1Item e)
+                {
+                    bool result = false;
+                    e.ZIP_IsReadOnly(ref result);
+                    return result;
+                }
+                private static void _ZIP_Validate(global::LightSwitchApplication.Table1Item e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.ZIP_Validate(r);
+                }
+                private static string _ZIP_GetImplementationValue(global::LightSwitchApplication.Table1Item.DetailsClass d)
+                {
+                    return d.ImplementationEntity.ZIP;
+                }
+                private static void _ZIP_SetImplementationValue(global::LightSwitchApplication.Table1Item.DetailsClass d, string v)
+                {
+                    d.ImplementationEntity.ZIP = v;
+                }
+                private static void _ZIP_OnValueChanged(global::LightSwitchApplication.Table1Item e)
+                {
+                    e.ZIP_Changed();
+                }
+    
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -615,6 +685,9 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Table1Item, global::LightSwitchApplication.Table1Item.DetailsClass, byte[]>.Data _RowVersion;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Table1Item, global::LightSwitchApplication.Table1Item.DetailsClass, string>.Data _ZIP;
             
         }
     

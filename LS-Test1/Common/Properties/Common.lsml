@@ -28,8 +28,8 @@
       Name="ApplicationData" />
   </EntityContainerGroup>
   <EntityContainer
-    Name="ApplicationData"
-    IsIntrinsic="True">
+    IsIntrinsic="True"
+    Name="ApplicationData">
     <SubmitOperation
       Name="SaveChanges" />
     <EntitySet
@@ -182,6 +182,15 @@
           <Generated />
           <Hidden />
           <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ZIP"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
     </EntityType.Properties>
